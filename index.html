@@ -14,14 +14,14 @@
             <div>
                 <h1 class="title">Título</h1>
                 <div class="inputs">
-                    <form>
+                    <form id="form" onsubmit="generate();return false"> 
                         <input type="text" placeholder="Título" name="title"/>
                         <input type="text" placeholder="Linha Fina" name="headline"/>
                         <input type="text" placeholder="Texto Alternativo" name="alt"/>
                         <input type="text" placeholder="Url Desktop" name="url-desktop"/>
                         <input type="text" placeholder="Url Mobile" name="url-mobile"/>
                         
-                        <button type="submit">Gerar código</button>
+                        <button class="generate" type="submit" value="Enviar">Gerar código</button>
                     </form>
                 </div>
                 <div class="cod-embed"></div>
@@ -30,11 +30,14 @@
 
         </section>
         <section class="preview">
-            <picture>
-                <source media="(min-width: 800px)" srcset="https://cdn.fansshare.com/image/1366x768/mac-wallpaper-and-outer-space-desktop-pc-desktop-wallpaper-outer-space-hd-free-download-nature-christmas-animated-widescreen-space-1404893019.jpg" />
-                <source media="(max-width: 799px)" srcset="https://wallpapercave.com/wp/wp5331410.jpg" />
-                <img src="https://wallpapercave.com/wp/wp5331410.jpg" alt="Chris standing up holding his daughter Elva" />
-              </picture>
+            <div class="result">
+                <picture class="graphic">
+                    <source media="(min-width: 800px)" srcset="https://cdn.fansshare.com/image/1366x768/mac-wallpaper-and-outer-space-desktop-pc-desktop-wallpaper-outer-space-hd-free-download-nature-christmas-animated-widescreen-space-1404893019.jpg" />
+                    <source media="(max-width: 799px)" srcset="https://wallpapercave.com/wp/wp5331410.jpg" />
+                    <img src="https://wallpapercave.com/wp/wp5331410.jpg" alt="Chris standing up holding his daughter Elva" />
+                  </picture>
+            </div>
+            
         </section>
     </main>
     <script src="main.js"></script>
