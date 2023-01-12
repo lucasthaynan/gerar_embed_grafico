@@ -27,8 +27,8 @@ function generate() {
     
 
     let codEmbed = `
-    <h2>${titleForm.value}</h2>
-    <h3>${headLineForm.value}</h3>
+    <h2 style="font-size:20px; color: #333; margin-bottom: -20px;">${titleForm.value}</h2>
+    <h3 style="font-size:12px; color: #777; font-weight: 400;">${headLineForm.value}</h3>
     <picture class="graphic">
     <source media="(min-width: 800px)" srcset="${urlDesktopForm.value}" />
     <source media="(max-width: 799px)" srcset="${urlMobileForm.value}" />
@@ -39,6 +39,8 @@ function generate() {
 
     graphicCod.innerHTML = codEmbed
     console.log(graphicCod.innerHTML)
+
+    document.querySelector('input[name="result-embed"]').value = codEmbed
     
 }
 
