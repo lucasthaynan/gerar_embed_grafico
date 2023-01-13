@@ -15,15 +15,24 @@
                 <h1 class="title">Título</h1>
                 <div class="inputs">
                     <form id="form" onsubmit="generate();return false"> 
+                        <label class="title-label" for="title">Título</label>
                         <input type="text" placeholder="Título" name="title"/>
+
+                        <label class="headline-label" for="headline">Linha Fina</label>
                         <input type="text" placeholder="Linha Fina" name="headline"/>
+
+                        <label class="alt-label" for="alt">Texto Alternativo</label>
                         <input type="text" placeholder="Texto Alternativo" name="alt"/>
+
+                        <label class="url-desktop-label" for="url-desktop">Url Desktop</label>
                         <input type="text" placeholder="Url Desktop" name="url-desktop"/>
+
+                        <label class="url-mobile-label" for="url-mobile">Url Mobile</label>
                         <input type="text" placeholder="Url Mobile" name="url-mobile"/>
                         
                         <button class="generate" type="submit" value="Enviar">Gerar código</button>
 
-                        <input type="text" placeholder="Código Embed" name="result-embed"/>
+                        <textarea class="box-embed" rows="10" type="text" placeholder="Código Embed" name="result-embed"></textarea>
                         
                     </form>
                 </div>
@@ -34,8 +43,8 @@
         </section>
         <section class="preview">
             <div class="result">
-                <h2></h2>
-                <h3></h3>
+                <h2 style="font-size:20px; color: #333; margin-bottom: -20px;">Título do gráfico</h2>
+                <h3 style="font-size:12px; color: #777; font-weight: 400;">Descrição com mais detalhes sobre a visualização</h3>
                 <picture class="graphic">
                     <source media="(min-width: 800px)" srcset="https://cdn.fansshare.com/image/1366x768/mac-wallpaper-and-outer-space-desktop-pc-desktop-wallpaper-outer-space-hd-free-download-nature-christmas-animated-widescreen-space-1404893019.jpg" />
                     <source media="(max-width: 799px)" srcset="https://wallpapercave.com/wp/wp5331410.jpg" />
