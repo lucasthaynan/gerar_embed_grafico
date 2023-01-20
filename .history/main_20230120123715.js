@@ -35,6 +35,15 @@ function generate() {
     
 }
 
-Generate()
+// Generate()
 
 // console.log(titleForm.value)
+
+tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
