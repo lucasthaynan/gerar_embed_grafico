@@ -23,12 +23,13 @@ main {
 
 section.form {
     background: #F0F0F0;
-    width: 50vw;
+    width: 100%;
     height: 100vh;
 
     display: flex;
+    padding-top: 85px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 h1.text-preview {
@@ -37,21 +38,26 @@ h1.text-preview {
 
 .icons-responsive {
     display: flex;
-    gap: 15px;
+    gap: 30px;
 }
 
 .container-form {
     width: 350px;
 }
 
+.inputs.dynamic {
+    display: none;
+}
+
 section.preview {
 
     background: #ffffff;
-    width: 50vw;
+    width: 100%;
     height: 100vh;
     display: flex;
+    padding-top: 85px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     
 }
 
@@ -60,14 +66,16 @@ section.preview {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 475px;
+    width: 570px;
     gap: 25px;
 }
 
 .container-page {
     width: 100vw;
     display: flex;
+    display: grid;
     justify-content: space-around;
+    grid-template-columns: 3fr 4fr;
 }
 
 h1 {
@@ -122,11 +130,22 @@ img {
 }
 
 div.result {
+    max-height: 580px;
+    overflow: auto;
+}
+
+
+div.result > div {
     display: flex;
     flex-direction: column;
     gap: 25px;
 
     font-family: 'Open Sans', sans-serif;
+}
+
+.result div.preview-mobile {
+    display: none;
+    width: 310px;
 }
 
 button {
@@ -202,4 +221,5 @@ textarea.box-embed {
 .icons-responsive img {
     width: 30px;
     height: 100%;
+    cursor: pointer;
 }
