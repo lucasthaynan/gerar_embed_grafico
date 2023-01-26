@@ -18,11 +18,56 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-content: center;
     justify-content: center;
-    margin: 120px 100px 200px 100px;
-    gap: 40px;
-    gap: 100px;
+}
+
+section.form {
+    background: #F0F0F0;
+    width: 50vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1.text-preview {
+    font-size: 1.4rem;
+}
+
+.icons-responsive {
+    display: flex;
+    gap: 15px;
+}
+
+.container-form {
+    width: 350px;
+}
+
+section.preview {
+
+    background: #ffffff;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 475px;
+    gap: 25px;
+}
+
+.container-page {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
 }
 
 h1 {
@@ -37,14 +82,19 @@ h2, h3 {
 form {
     display: flex;
     flex-direction: column;
+    
 }
 
 input {
     height: 30px;
-    width: 320px;
-    max-width: 320px;
+    width: 350px;
+    max-width: 350px;
     margin-bottom: 10px;
     text-indent: 10px;
+
+    background: rgb(255 255 255 / 76%);
+    border: 1px solid #a0a0a0;
+    border-radius: 5px;
 }
 
 label {
@@ -65,9 +115,7 @@ input.box-embed {
     height: 100px;
 }
 
-section.preview {
-    width: 420px;
-}
+
 
 img {
     width: 100%;
@@ -82,21 +130,31 @@ div.result {
 }
 
 button {
+    height: 35px;
     display: inline-block;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.4rem 2rem;
     margin: 0;
     text-decoration: none;
     background: #0069ed;
     color: #ffffff;
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, 
                 transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+    border-radius: 8.11188px;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+
 }
 
 button:hover,
@@ -111,4 +169,37 @@ button:focus {
 
 button:active {
     transform: scale(0.99);
+}
+
+
+.options {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.options button {
+    width: 100%;
+    background: #bcbcbc;
+}
+
+.options .active {
+    background: #0069ed;
+}
+
+button.generate {
+    margin-top: 25px;
+}
+
+textarea.box-embed {
+    margin-top: 9px;
+    background: rgb(255 255 255 / 76%);
+    border: 1px solid #a0a0a0;
+    border-radius: 5px;
+    text-indent: 15px;
+}
+.icons-responsive img {
+    width: 30px;
+    height: 100%;
 }
