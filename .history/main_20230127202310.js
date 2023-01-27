@@ -287,19 +287,16 @@ function getListGraphicsApi() {
       // criando funcao que carrega os dados no formulário a partir de um gráfico salvo
 
       let titleGraphicSave = document.querySelectorAll('.title-graphic')
-      // console.log(titleGraphicSave)
+      console.log(titleGraphicSave)
       titleGraphicSave.forEach(item => {
-        item.addEventListener("click", teste())
+        item.addEventListener("click", e => {
+          console.log(e)
+        })
       })
 
     })
   });
 
-}
-
-
-function teste() {
-  console.log("teste")
 }
 
 getListGraphicsApi()

@@ -289,17 +289,14 @@ function getListGraphicsApi() {
       let titleGraphicSave = document.querySelectorAll('.title-graphic')
       // console.log(titleGraphicSave)
       titleGraphicSave.forEach(item => {
-        item.addEventListener("click", teste())
+        item.addEventListener("click", e => {
+          console.log(e)
+        })
       })
 
     })
   });
 
-}
-
-
-function teste() {
-  console.log("teste")
 }
 
 getListGraphicsApi()

@@ -143,7 +143,6 @@ function generateStatic() {
 
 
 // enviando dados do formulário para o google sheets
-// ferramenta usada: https://docs.sheetdb.io/sheetdb-api/read#get-content
 
 let btnSaveStatic = document.querySelector(".save-static")
 
@@ -159,7 +158,6 @@ btnSaveStatic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'data_hora': data_hora,
                 'type': 'static',
                 'titleForm': titleForm.value,
                 'embedForm': '',
@@ -181,7 +179,7 @@ btnSaveStatic.addEventListener("click", e => {
 
 let btnSaveDynamic = document.querySelector(".save-dynamic")
 
-btnSaveDynamic.addEventListener("click", e => {
+btnSaveStatic.addEventListener("click", e => {
 
   fetch('https://sheetdb.io/api/v1/m8e9lg13iu4fi', {
     method: 'POST',
@@ -193,7 +191,6 @@ btnSaveDynamic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'data_hora': data_hora,
                 'type': 'dynamic',
                 'titleForm': titleForm.value,
                 'embedForm': '',
@@ -212,8 +209,7 @@ btnSaveDynamic.addEventListener("click", e => {
 
 });
 
-// variável que salva todos os gráficos vindos do Google Sheets
-let dataListSaveApi = ''
+
 
 function getListGraphicsApi() {
   // Sort results by id in descending order, take two
@@ -224,7 +220,6 @@ function getListGraphicsApi() {
   .then((data) => {
     console.log(data)
 
-    dataListSaveApi = data
     // let titleFormData = ''
     // let headLineFormData = ''
     // let embedFormData = ''
@@ -248,18 +243,9 @@ function getListGraphicsApi() {
 
       let divGraphic = document.createElement("div");
       divGraphic.classList.add("graphic-gsheets")
-      
 
       let imageGraphic = document.createElement("img");
-
-      // verificando se existe alguma informação na variável de imagem
-      if (!registro["urlDesktopForm"]) {
-        imageGraphic.src = "./imagens/rectangle.png"
-        
-      } else {
-        imageGraphic.src = registro["urlDesktopForm"]
-      }
-      
+      imageGraphic.src = "./imagens/rectangle.png"
 
       let divTextGraphic = document.createElement("div");
       divTextGraphic.classList.add("text")
@@ -267,11 +253,9 @@ function getListGraphicsApi() {
       let h2Graphic = document.createElement("h2");
       h2Graphic.classList.add("title-graphic")
       h2Graphic.innerText = registro["titleForm"]
-      h2Graphic.id = registro["id"]
 
       let pGraphic = document.createElement("p");
       pGraphic.classList.add("date-graphic")
-      pGraphic.innerText = "Salvo em " + registro["data_hora"]
 
 
 
@@ -284,22 +268,11 @@ function getListGraphicsApi() {
       document.getElementById("list-save").appendChild(divGraphic);
 
 
-      // criando funcao que carrega os dados no formulário a partir de um gráfico salvo
 
-      let titleGraphicSave = document.querySelectorAll('.title-graphic')
-      // console.log(titleGraphicSave)
-      titleGraphicSave.forEach(item => {
-        item.addEventListener("click", teste())
-      })
 
     })
   });
 
-}
-
-
-function teste() {
-  console.log("teste")
 }
 
 getListGraphicsApi()
@@ -307,25 +280,16 @@ getListGraphicsApi()
 
 function time() {
   today=new Date();
-  data = today.toLocaleDateString()
   h=today.getHours();
   m=today.getMinutes();
   s=today.getSeconds();
-
-  data_hora = data + " " + h+":"+m
-
-  return data_hora
+  console.log(h+":"+m+":"+s)
+  console.log(today)
   
 }
 
-data_hora = time()
 
-console.log(data_hora)
-
-
-
-
-
+time()
 
 // generate()
 

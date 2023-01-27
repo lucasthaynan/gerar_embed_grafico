@@ -248,7 +248,7 @@ function getListGraphicsApi() {
 
       let divGraphic = document.createElement("div");
       divGraphic.classList.add("graphic-gsheets")
-      
+      divGraphic.id = registro["id"]
 
       let imageGraphic = document.createElement("img");
 
@@ -267,7 +267,6 @@ function getListGraphicsApi() {
       let h2Graphic = document.createElement("h2");
       h2Graphic.classList.add("title-graphic")
       h2Graphic.innerText = registro["titleForm"]
-      h2Graphic.id = registro["id"]
 
       let pGraphic = document.createElement("p");
       pGraphic.classList.add("date-graphic")
@@ -284,22 +283,11 @@ function getListGraphicsApi() {
       document.getElementById("list-save").appendChild(divGraphic);
 
 
-      // criando funcao que carrega os dados no formulário a partir de um gráfico salvo
 
-      let titleGraphicSave = document.querySelectorAll('.title-graphic')
-      // console.log(titleGraphicSave)
-      titleGraphicSave.forEach(item => {
-        item.addEventListener("click", teste())
-      })
 
     })
   });
 
-}
-
-
-function teste() {
-  console.log("teste")
 }
 
 getListGraphicsApi()
@@ -322,6 +310,8 @@ data_hora = time()
 
 console.log(data_hora)
 
+
+// criando funcao que carrega os dados no formulário a partir de um gráfico salvo
 
 
 

@@ -44,16 +44,8 @@ section.list-graphics-save {
     padding-top: 85px;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap;
-    align-content: flex-start;
 }
 
-section.list-graphics-save .list {
-    width: 350px;
-    max-height: 650px;
-    overflow: scroll;
-
-}
 
 .graphic-gsheets {
     width: 350px;
@@ -64,36 +56,16 @@ section.list-graphics-save .list {
 }
 
 .graphic-gsheets img {
-    /* width: 80px; */
+    width: 80px;
     height: 80px;
-
-    /* ajustando imagem dentro das dimensoes do elemento */
-    max-width: 80px;
-    width: 100%;
-    object-fit: cover;
-    object-position: bottom;
 }
 
 h2.title-graphic {
-    font-size: 1.1rem;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.1rem;
-    cursor: pointer;
-
-    color: #100E3F;
+    font-size: 0.9rem;
 }
 
 p.date-graphic {
-    font-size: 0.8rem;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 200;
-
-    line-height: 26px;
-
-    color: #888888;
+    font-size: 0.9rem;
 }
 
 

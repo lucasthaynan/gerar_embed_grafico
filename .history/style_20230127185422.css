@@ -50,9 +50,6 @@ section.list-graphics-save {
 
 section.list-graphics-save .list {
     width: 350px;
-    max-height: 650px;
-    overflow: scroll;
-
 }
 
 .graphic-gsheets {
@@ -64,14 +61,8 @@ section.list-graphics-save .list {
 }
 
 .graphic-gsheets img {
-    /* width: 80px; */
+    width: 80px;
     height: 80px;
-
-    /* ajustando imagem dentro das dimensoes do elemento */
-    max-width: 80px;
-    width: 100%;
-    object-fit: cover;
-    object-position: bottom;
 }
 
 h2.title-graphic {
@@ -80,7 +71,6 @@ h2.title-graphic {
     font-style: normal;
     font-weight: 500;
     line-height: 1.1rem;
-    cursor: pointer;
 
     color: #100E3F;
 }

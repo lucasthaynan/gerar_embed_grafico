@@ -284,22 +284,11 @@ function getListGraphicsApi() {
       document.getElementById("list-save").appendChild(divGraphic);
 
 
-      // criando funcao que carrega os dados no formulário a partir de um gráfico salvo
 
-      let titleGraphicSave = document.querySelectorAll('.title-graphic')
-      // console.log(titleGraphicSave)
-      titleGraphicSave.forEach(item => {
-        item.addEventListener("click", teste())
-      })
 
     })
   });
 
-}
-
-
-function teste() {
-  console.log("teste")
 }
 
 getListGraphicsApi()
@@ -323,8 +312,13 @@ data_hora = time()
 console.log(data_hora)
 
 
+// criando funcao que carrega os dados no formulário a partir de um gráfico salvo
 
+let titleGraphicSave = document.querySelector('h2.title-graphic')
 
+titleGraphicSave.addEventListener('click', e => {
+  console.log(titleGraphicSave)
+})
 
 
 // generate()

@@ -143,7 +143,6 @@ function generateStatic() {
 
 
 // enviando dados do formulário para o google sheets
-// ferramenta usada: https://docs.sheetdb.io/sheetdb-api/read#get-content
 
 let btnSaveStatic = document.querySelector(".save-static")
 
@@ -212,8 +211,7 @@ btnSaveDynamic.addEventListener("click", e => {
 
 });
 
-// variável que salva todos os gráficos vindos do Google Sheets
-let dataListSaveApi = ''
+
 
 function getListGraphicsApi() {
   // Sort results by id in descending order, take two
@@ -224,7 +222,6 @@ function getListGraphicsApi() {
   .then((data) => {
     console.log(data)
 
-    dataListSaveApi = data
     // let titleFormData = ''
     // let headLineFormData = ''
     // let embedFormData = ''
@@ -248,30 +245,20 @@ function getListGraphicsApi() {
 
       let divGraphic = document.createElement("div");
       divGraphic.classList.add("graphic-gsheets")
-      
 
       let imageGraphic = document.createElement("img");
-
-      // verificando se existe alguma informação na variável de imagem
-      if (!registro["urlDesktopForm"]) {
-        imageGraphic.src = "./imagens/rectangle.png"
-        
-      } else {
-        imageGraphic.src = registro["urlDesktopForm"]
-      }
-      
+      imageGraphic.src = "./imagens/rectangle.png"
 
       let divTextGraphic = document.createElement("div");
       divTextGraphic.classList.add("text")
 
       let h2Graphic = document.createElement("h2");
       h2Graphic.classList.add("title-graphic")
-      h2Graphic.innerText = registro["titleForm"]
-      h2Graphic.id = registro["id"]
+      h2Graphic.innerText = "Salvo em " + registro["titleForm"]
 
       let pGraphic = document.createElement("p");
       pGraphic.classList.add("date-graphic")
-      pGraphic.innerText = "Salvo em " + registro["data_hora"]
+      pGraphic.innerText = registro["data_hora"]
 
 
 
@@ -284,22 +271,11 @@ function getListGraphicsApi() {
       document.getElementById("list-save").appendChild(divGraphic);
 
 
-      // criando funcao que carrega os dados no formulário a partir de um gráfico salvo
 
-      let titleGraphicSave = document.querySelectorAll('.title-graphic')
-      // console.log(titleGraphicSave)
-      titleGraphicSave.forEach(item => {
-        item.addEventListener("click", teste())
-      })
 
     })
   });
 
-}
-
-
-function teste() {
-  console.log("teste")
 }
 
 getListGraphicsApi()
@@ -321,11 +297,6 @@ function time() {
 data_hora = time()
 
 console.log(data_hora)
-
-
-
-
-
 
 // generate()
 
