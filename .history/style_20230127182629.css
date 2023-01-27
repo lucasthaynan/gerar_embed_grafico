@@ -252,29 +252,18 @@ textarea.box-embed {
 
 .bottons-menu {
     position: fixed; /* or absolute */
-    top: 40%;
-    background-color: #C5AFCC;   
-    
+    top: 45%;
+    background-color: red;   
 }
 
 .bottons-menu > div {
     width: 60px;
     height: 60px;
-    position: relative;
     margin: 0 auto;
-    cursor: pointer;
 }
 
 .bottons-menu img {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-}
-
-.bottons-menu .active {
-    background-color: #890AB2;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
 }

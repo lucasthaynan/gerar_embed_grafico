@@ -42,9 +42,6 @@ btnStatic.addEventListener("click", e => {
   formStatic.style.display = "flex"
   formDynamic.style.display = "none"
 
-  btnSaveStatic.style.display = "flex"
-  btnSaveDynamic.style.display = "none"
-
 })
 
 btnDynamic.addEventListener("click", e => {
@@ -54,9 +51,6 @@ btnDynamic.addEventListener("click", e => {
 
   formDynamic.style.display = "flex"
   formStatic.style.display = "none"
-
-  btnSaveStatic.style.display = "none"
-  btnSaveDynamic.style.display = "flex"
 
 })
 

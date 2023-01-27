@@ -4,9 +4,6 @@ let btnMobile = document.querySelector('.icon-mobile')
 let graphicCodDesktop = document.querySelector('.result .preview-desktop')
 let graphicCodMobile = document.querySelector('.result .preview-mobile')
 
-
-// ativando funcionabilidade dos botoes de preview desktop e mobile
-
 btnDesktop.addEventListener("click", e => {
   // console.log("teste");
   graphicCodMobile.style.display = "none";
@@ -26,8 +23,6 @@ btnMobile.addEventListener("click", e => {
 })
 
 
-// ativando funcionabilidade dos botoes de gráfico dicamico e estatico
-
 let btnStatic = document.querySelector('.btn-static')
 let btnDynamic = document.querySelector('.btn-dynamic')
 
@@ -42,9 +37,6 @@ btnStatic.addEventListener("click", e => {
   formStatic.style.display = "flex"
   formDynamic.style.display = "none"
 
-  btnSaveStatic.style.display = "flex"
-  btnSaveDynamic.style.display = "none"
-
 })
 
 btnDynamic.addEventListener("click", e => {
@@ -55,18 +47,7 @@ btnDynamic.addEventListener("click", e => {
   formDynamic.style.display = "flex"
   formStatic.style.display = "none"
 
-  btnSaveStatic.style.display = "none"
-  btnSaveDynamic.style.display = "flex"
-
 })
-
-
-let titleForm = ''
-let headLineForm = ''
-let altForm = ''
-let urlDesktopForm = '' 
-let urlMobileForm = ''
-let codEmbed = ''
 
 
 // Função chamada na tag form quando o usuário clica em "gerar/enviar"
@@ -76,8 +57,7 @@ function generateDynamic() {
     let titleForm = document.querySelector('.dynamic input[name="title"]')
     let headLineForm = document.querySelector('.dynamic input[name="headline"]')
     let embedForm = document.querySelector('.dynamic input[name="embed"]')
-
-
+    
     let codEmbed = `
 <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm.value}</h2>
 <h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm.value}</h3>
@@ -94,23 +74,18 @@ ${embedForm.value}`
 
     document.querySelector('.dynamic .box-embed').value = codEmbed
 
-
-    
     
 }
 
-
-
 function generateStatic() {
 
-   titleForm = document.querySelector('input[name="title"]')
-   headLineForm = document.querySelector('input[name="headline"]')
-   altForm = document.querySelector('input[name="alt"]')
-   urlDesktopForm = document.querySelector('input[name="url-desktop"]')
-   urlMobileForm = document.querySelector('input[name="url-mobile"]')
-  
+  let titleForm = document.querySelector('input[name="title"]')
+  let headLineForm = document.querySelector('input[name="headline"]')
+  let altForm = document.querySelector('input[name="alt"]')
+  let urlDesktopForm = document.querySelector('input[name="url-desktop"]')
+  let urlMobileForm = document.querySelector('input[name="url-mobile"]')
 
-   codEmbed = `
+    let codEmbed = `
 <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm.value}</h2>
 <h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm.value}</h3>
 <picture class="graphic">
@@ -137,77 +112,40 @@ function generateStatic() {
     document.querySelector('.box-embed').value = codEmbed
 
 
+    // enviando dados do formulário para o google sheets
+
+    let formSendStatic = document.querySelector(".inputs.static #sheetdb-form")
+
+    formSendStatic.addEventListener("submit", e => {
+
+      fetch('https://sheetdb.io/api/v1/m8e9lg13iu4fi', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            data: [
+                {
+                    'id': "INCREMENT",
+                    'type': 'static',
+                    'titleForm': titleForm,
+                    'headLineForm': headLineForm,
+                    'altForm': altForm,
+                    'urlDesktopForm': urlDesktopForm,
+                    'urlMobileForm': urlMobileForm,
+                    'codEmbed': codEmbed
+                }
+            ]
+        })
+      })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
     
+    
+    });
     
 }
-
-
-// enviando dados do formulário para o google sheets
-
-let btnSaveStatic = document.querySelector(".save-static")
-
-btnSaveStatic.addEventListener("click", e => {
-
-  fetch('https://sheetdb.io/api/v1/m8e9lg13iu4fi', {
-    method: 'POST',
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        data: [
-            {
-                'id': "INCREMENT",
-                'type': 'static',
-                'titleForm': titleForm.value,
-                'embedForm': '',
-                'headLineForm': headLineForm.value,
-                'altForm': altForm.value,
-                'urlDesktopForm': urlDesktopForm.value,
-                'urlMobileForm': urlMobileForm.value,
-                'codEmbed': codEmbed
-            }
-        ]
-    })
-  })
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-  
-
-});
-
-
-let btnSaveDynamic = document.querySelector(".save-dynamic")
-
-btnSaveStatic.addEventListener("click", e => {
-
-  fetch('https://sheetdb.io/api/v1/m8e9lg13iu4fi', {
-    method: 'POST',
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        data: [
-            {
-                'id': "INCREMENT",
-                'type': 'dynamic',
-                'titleForm': titleForm.value,
-                'embedForm': '',
-                'headLineForm': '',
-                'altForm': '',
-                'urlDesktopForm': '',
-                'urlMobileForm': '',
-                'codEmbed': codEmbed
-            }
-        ]
-    })
-  })
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-  
-
-});
 
 // generate()
 
@@ -259,6 +197,6 @@ btnSaveStatic.addEventListener("click", e => {
 //   });
 // });
 
-// console.log(formSendStatic)
+console.log(formSendStatic)
 
 

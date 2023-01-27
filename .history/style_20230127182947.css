@@ -262,7 +262,6 @@ textarea.box-embed {
     height: 60px;
     position: relative;
     margin: 0 auto;
-    cursor: pointer;
 }
 
 .bottons-menu img {
@@ -273,8 +272,4 @@ textarea.box-embed {
     left: 50%;
     transform: translate(-50%, -50%);
   
-}
-
-.bottons-menu .active {
-    background-color: #890AB2;
 }

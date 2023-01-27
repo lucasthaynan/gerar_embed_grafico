@@ -209,8 +209,6 @@ button.save-static,
 button.save-dynamic {
     width: 115px;
     align-items: center;
-    margin-top: 25px;
-    background: #66B065;
 }
 
 
@@ -245,36 +243,4 @@ textarea.box-embed {
     width: 30px;
     height: 100%;
     cursor: pointer;
-}
-
-
-/* menu suspenso lateral esquerdo */
-
-.bottons-menu {
-    position: fixed; /* or absolute */
-    top: 40%;
-    background-color: #C5AFCC;   
-    
-}
-
-.bottons-menu > div {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-.bottons-menu img {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-}
-
-.bottons-menu .active {
-    background-color: #890AB2;
 }

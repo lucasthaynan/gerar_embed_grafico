@@ -4,9 +4,6 @@ let btnMobile = document.querySelector('.icon-mobile')
 let graphicCodDesktop = document.querySelector('.result .preview-desktop')
 let graphicCodMobile = document.querySelector('.result .preview-mobile')
 
-
-// ativando funcionabilidade dos botoes de preview desktop e mobile
-
 btnDesktop.addEventListener("click", e => {
   // console.log("teste");
   graphicCodMobile.style.display = "none";
@@ -26,8 +23,6 @@ btnMobile.addEventListener("click", e => {
 })
 
 
-// ativando funcionabilidade dos botoes de gráfico dicamico e estatico
-
 let btnStatic = document.querySelector('.btn-static')
 let btnDynamic = document.querySelector('.btn-dynamic')
 
@@ -42,9 +37,6 @@ btnStatic.addEventListener("click", e => {
   formStatic.style.display = "flex"
   formDynamic.style.display = "none"
 
-  btnSaveStatic.style.display = "flex"
-  btnSaveDynamic.style.display = "none"
-
 })
 
 btnDynamic.addEventListener("click", e => {
@@ -54,9 +46,6 @@ btnDynamic.addEventListener("click", e => {
 
   formDynamic.style.display = "flex"
   formStatic.style.display = "none"
-
-  btnSaveStatic.style.display = "none"
-  btnSaveDynamic.style.display = "flex"
 
 })
 

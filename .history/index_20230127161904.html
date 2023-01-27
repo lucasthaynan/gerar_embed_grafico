@@ -12,16 +12,6 @@
 
         <div class="container-page">
 
-            <div class="bottons-menu">
-                <div class="new-graphic active">
-                    <img src="./imagens/new-graphic.png" alt="">
-                </div>
-                <div class="list-save">
-                    <img src="./imagens/list-save.png" alt="">
-                </div>
-
-            </div>
-
             <section class="form">
 
                 <div class="container-form">
@@ -32,7 +22,7 @@
                     </div>
                     
                     <div class="inputs static">
-                        <form id="sheetdb-form" onsubmit="generateStatic();return false"> 
+                        <form id="form" action="https://sheetdb.io/api/v1/m8e9lg13iu4fi" method="POST" onsubmit="generateStatic();return false"> 
                             <label class="title-label" for="title">Título</label>
                             <input type="text" placeholder="Título" name="title" value="Evolução dos casos em Alagoas"/>
 
@@ -53,12 +43,10 @@
                             <textarea class="box-embed" rows="10" type="text" placeholder="Código Embed" name="result-embed" onclick="this.select()"></textarea>
                             
                         </form>
-
-                        <button class="save-static">Salvar</button>
                     </div>
 
                     <div class="inputs dynamic">
-                        <form id="sheetdb-form-dynamic" onsubmit="generateDynamic();return false"> 
+                        <form id="form" onsubmit="generateDynamic();return false"> 
                             <label class="title-label" for="title">Título</label>
                             <input type="text" placeholder="Título" name="title" value="Evolução dos casos em Alagoas"/>
 
@@ -73,10 +61,7 @@
                             <textarea class="box-embed" rows="10" type="text" placeholder="Código Embed" name="result-embed" onclick="this.select()"></textarea>
                             
                         </form>
-                        <button class="save-dynamic">Salvar</button>
                     </div>
-
-                    
 
                     <div class="cod-embed"></div>
                 </div>
