@@ -150,8 +150,6 @@ let btnSaveStatic = document.querySelector(".save-static")
 
 btnSaveStatic.addEventListener("click", e => {
 
-  document.querySelector(".save-static").innerHTML = `<img class="loading" src="./imagens/loading.png" alt="">`
-
   fetch('https://sheetdb.io/api/v1/m8e9lg13iu4fi', {
     method: 'POST',
     headers: {
@@ -174,15 +172,12 @@ btnSaveStatic.addEventListener("click", e => {
             }
         ]
     })
-    
   })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data)
+    
     // chamando funcao da bilioteca sweetalert.js para exibir o popup
     swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
-
-    document.querySelector(".save-static").innerHTML = "Salvar"
 
   });
   
@@ -195,7 +190,7 @@ let btnSaveDynamic = document.querySelector(".save-dynamic")
 
 btnSaveDynamic.addEventListener("click", e => {
 
-  document.querySelector(".save-dynamic").innerHTML = `<img class="loading" src="./imagens/loading.png" alt="">`
+  document.querySelector(".btn-save").innerHTML = `<img class="loading" src="./imagens/loading.png" alt="">`
 
   fetch('https://sheetdb.io/api/v1/m8e9lg13iu4fi', {
     method: 'POST',
@@ -226,7 +221,7 @@ btnSaveDynamic.addEventListener("click", e => {
        // chamando funcao da bilioteca sweetalert.js para exibir o popup
        swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
 
-       document.querySelector(".save-dynamic").innerHTML = "Salvar"
+       document.querySelector(".btn-save").innerHTML = "Salvar"
       });
   
   atualizarLista = "sim"

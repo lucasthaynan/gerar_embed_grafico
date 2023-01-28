@@ -174,7 +174,7 @@ btnSaveStatic.addEventListener("click", e => {
             }
         ]
     })
-    
+    console.log(data)
   })
   .then((response) => response.json())
   .then((data) => {

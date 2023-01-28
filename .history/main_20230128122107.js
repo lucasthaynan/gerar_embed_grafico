@@ -174,11 +174,10 @@ btnSaveStatic.addEventListener("click", e => {
             }
         ]
     })
-    
   })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data)
+    console.log(data["return_values"])
     // chamando funcao da bilioteca sweetalert.js para exibir o popup
     swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
 

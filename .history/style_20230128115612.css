@@ -277,8 +277,6 @@ button.save-dynamic {
     align-items: center;
     margin-top: 25px;
     background: #66B065;
-    display: flex;
-    justify-content: center;
 }
 
 
@@ -347,17 +345,7 @@ textarea.box-embed {
     background-color: #890AB2;
 }
 
-/* ativando efeito de carregamento do botao de salvar */
- .loading {
-    width: 24px;
-    animation: spin 1s infinite linear;
- }
 
- @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    } 
-    to {
-        transform: rotate(360deg);
-    } 
+ .loading {
+    width: 25px;
  }

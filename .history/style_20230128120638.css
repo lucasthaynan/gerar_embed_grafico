@@ -347,10 +347,10 @@ textarea.box-embed {
     background-color: #890AB2;
 }
 
-/* ativando efeito de carregamento do botao de salvar */
+
  .loading {
     width: 24px;
-    animation: spin 1s infinite linear;
+    animation: spin 1s infinite infinite;
  }
 
  @keyframes spin {
