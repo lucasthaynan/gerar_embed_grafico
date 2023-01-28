@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Grafico</title>
+</head>
+<body>
+    <main>
+
+        <div class="container-page">
+
+            <div class="bottons-menu">
+                <div class="new-graphic active">
+                    <img src="./imagens/new-graphic.png" alt="">
+                </div>
+                <div class="list-save">
+                    <img src="./imagens/list-save.png" alt="">
+                </div>
+
+            </div>
+
+            <section class="list-graphics-save">
+
+                <!-- <h1>Gráficos salvos</h1> -->
+                <div id="list-save" class="list">
+
+                    <!-- <div class="graphic-gsheets">
+                        <img src="./imagens/rectangle.png" alt="">
+                        <div class="text">
+                            <h2 class="title-graphic">Título do gráfico neste espaço reservado</h2>
+                            <p class="date-graphic">Criado em 27/01/2023</p>
+                        </div>
+                    </div>
+     -->
+                 
+
+                </div>
+                
+
+            </section>
+
+            <section class="form">
+
+                <div class="container-form">
+                    <!-- <h1 class="title">Gerar gráfico estático responsivo</h1> -->
+                    <div class="options">
+                        <button class="btn-static active">Estático</button>
+                        <button class="btn-dynamic">Interativo</button>
+                    </div>
+                    
+                    <div class="inputs static">
+                        <form id="sheetdb-form" onsubmit="generateStatic();return false"> 
+                            <label class="title-label" for="title">Título</label>
+                            <input type="text" placeholder="Título" name="title" value="Evolução dos casos em Alagoas"/>
+
+                            <label class="headline-label" for="headline">Linha Fina</label>
+                            <input type="text" placeholder="Linha Fina" name="headline" value="Em 2022 os registros bateram recorde, sobretudo para as meninas"/>
+
+                            <label class="alt-label" for="alt">Texto Alternativo</label>
+                            <input type="text" placeholder="Texto Alternativo" name="alt" value="Gráfico sobre a evolução de casos em Alagoas"/>
+
+                            <label class="url-desktop-label" for="url-desktop">Url Desktop</label>
+                            <input type="text" placeholder="Url Desktop" name="url-desktop" value="https://www.agenciatatu.com.br/wp-content/uploads/grafico-teste-desktop-1.svg"/>
+
+                            <label class="url-mobile-label" for="url-mobile">Url Mobile</label>
+                            <input type="text" placeholder="Url Mobile" name="url-mobile" value="https://www.agenciatatu.com.br/wp-content/uploads/grafico-teste-mobile-1.png"/>
+                            
+                            <button class="generate" type="submit" value="Enviar">Gerar código</button>
+
+                            <textarea class="box-embed" rows="10" type="text" placeholder="Código Embed" name="result-embed" onclick="this.select()"></textarea>
+                            
+                        </form>
+
+                        <button class="save-static">Salvar</button>
+                    </div>
+
+                    <div class="inputs dynamic">
+                        <form id="sheetdb-form-dynamic" onsubmit="generateDynamic();return false"> 
+                            <label class="title-label" for="title">Título</label>
+                            <input type="text" placeholder="Título" name="title" value="Evolução dos casos em Alagoas"/>
+
+                            <label class="headline-label" for="headline">Linha Fina</label>
+                            <input type="text" placeholder="Linha Fina" name="headline" value="Em 2022 os registros bateram recorde, sobretudo para as meninas"/>
+
+                            <label class="embed-label" for="alt">Embed do Gráfico</label>
+                            <input type="text" placeholder="Embed do Gráfico" name="embed" value=""/>
+                            
+                            <button class="generate" type="submit" value="Enviar">Gerar código</button>
+
+                            <textarea class="box-embed" rows="10" type="text" placeholder="Código Embed" name="result-embed" onclick="this.select()"></textarea>
+                            
+                        </form>
+                        <button class="save-dynamic">Salvar</button>
+                    </div>
+
+                    
+
+                    <div class="cod-embed"></div>
+                </div>
+
+
+            </section>
+            <section class="preview">
+
+                <div class="container-preview">
+                    <!-- <h1 class="text-preview">Pré-visualização</h1> -->
+                    <div class="icons-responsive">
+                        <img class="icon-desktop" src="./imagens/monitor.svg" alt="monitor">
+                        <img class="icon-mobile" src="./imagens/smartphone-cinza.svg" alt="celular">
+                    </div>
+                    <div class="result">
+
+                        <div class="preview-desktop">
+                            <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">Evolução dos casos em Alagoas</h2>
+                            <h3 style="font-size:14px; color: #777; font-weight: 350;">Em 2022 os registros bateram recorde, sobretudo para as meninas</h3>
+                            <img src="https://www.agenciatatu.com.br/wp-content/uploads/grafico-teste-desktop-1.svg" alt="Gráfico sobre a evolução de casos em Alagoas">
+                        </div>
+
+                        <div class="preview-mobile">
+                            <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">Evolução dos casos em Alagoas</h2>
+                            <h3 style="font-size:14px; color: #777; font-weight: 350;">Em 2022 os registros bateram recorde, sobretudo para as meninas</h3>
+                            <img src="https://www.agenciatatu.com.br/wp-content/uploads/grafico-teste-mobile-1.png" alt="Gráfico sobre a evolução de casos em Alagoas">
+                        </div>
+                        <!-- <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">Evolução dos casos em Alagoas</h2>
+                        <h3 style="font-size:14px; color: #777; font-weight: 350;">Em 2022 os registros bateram recorde, sobretudo para as meninas</h3>
+                        <picture class="graphic">
+                            <source media="(min-width: 480px)" srcset="https://www.agenciatatu.com.br/wp-content/uploads/grafico-teste-desktop-1.svg" />
+                            <source media="(max-width: 479px)" srcset="https://www.agenciatatu.com.br/wp-content/uploads/grafico-teste-mobile-1.png" />
+                            <img src="https://www.agenciatatu.com.br/wp-content/uploads/grafico-teste-desktop-1.svg" alt="Gráfico sobre a evolução de casos em Alagoas" />
+                        </picture> -->
+                    </div>
+
+                    </div>
+                    
+            </section>
+            
+        
+        </div>
+        
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -67,19 +67,18 @@ let altForm = ''
 let urlDesktopForm = '' 
 let urlMobileForm = ''
 let codEmbed = ''
-let embedForm = ''
 
 
 // Função chamada na tag form quando o usuário clica em "gerar/enviar"
 
 function generateDynamic() {
 
-    titleForm = document.querySelector('.dynamic input[name="title"]')
-    headLineForm = document.querySelector('.dynamic input[name="headline"]')
-    embedForm = document.querySelector('.dynamic input[name="embed"]')
+    let titleForm = document.querySelector('.dynamic input[name="title"]')
+    let headLineForm = document.querySelector('.dynamic input[name="headline"]')
+    let embedForm = document.querySelector('.dynamic input[name="embed"]')
 
 
-    codEmbed = `
+    let codEmbed = `
 <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm.value}</h2>
 <h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm.value}</h3>
 ${embedForm.value}`
@@ -160,11 +159,11 @@ btnSaveStatic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'type': 'static',
                 'data_hora': data_hora,
+                'type': 'static',
                 'titleForm': titleForm.value,
-                'headLineForm': headLineForm.value,
                 'embedForm': '',
+                'headLineForm': headLineForm.value,
                 'altForm': altForm.value,
                 'urlDesktopForm': urlDesktopForm.value,
                 'urlMobileForm': urlMobileForm.value,
@@ -195,11 +194,11 @@ btnSaveDynamic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'type': 'dynamic',
                 'data_hora': data_hora,
+                'type': 'dynamic',
                 'titleForm': titleForm.value,
+                'embedForm': '',
                 'headLineForm': '',
-                'embedForm': embedForm.value,
                 'altForm': '',
                 'urlDesktopForm': '',
                 'urlMobileForm': '',

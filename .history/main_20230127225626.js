@@ -199,7 +199,7 @@ btnSaveDynamic.addEventListener("click", e => {
                 'data_hora': data_hora,
                 'titleForm': titleForm.value,
                 'headLineForm': '',
-                'embedForm': embedForm.value,
+                'embedForm': embedForm,
                 'altForm': '',
                 'urlDesktopForm': '',
                 'urlMobileForm': '',

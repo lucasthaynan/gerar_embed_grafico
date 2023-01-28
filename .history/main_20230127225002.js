@@ -67,7 +67,6 @@ let altForm = ''
 let urlDesktopForm = '' 
 let urlMobileForm = ''
 let codEmbed = ''
-let embedForm = ''
 
 
 // Função chamada na tag form quando o usuário clica em "gerar/enviar"
@@ -160,11 +159,11 @@ btnSaveStatic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'type': 'static',
                 'data_hora': data_hora,
+                'type': 'static',
                 'titleForm': titleForm.value,
-                'headLineForm': headLineForm.value,
                 'embedForm': '',
+                'headLineForm': headLineForm.value,
                 'altForm': altForm.value,
                 'urlDesktopForm': urlDesktopForm.value,
                 'urlMobileForm': urlMobileForm.value,
@@ -195,11 +194,11 @@ btnSaveDynamic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'type': 'dynamic',
                 'data_hora': data_hora,
+                'type': 'dynamic',
                 'titleForm': titleForm.value,
+                'embedForm': '',
                 'headLineForm': '',
-                'embedForm': embedForm.value,
                 'altForm': '',
                 'urlDesktopForm': '',
                 'urlMobileForm': '',

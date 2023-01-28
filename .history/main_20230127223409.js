@@ -67,19 +67,18 @@ let altForm = ''
 let urlDesktopForm = '' 
 let urlMobileForm = ''
 let codEmbed = ''
-let embedForm = ''
 
 
 // Função chamada na tag form quando o usuário clica em "gerar/enviar"
 
 function generateDynamic() {
 
-    titleForm = document.querySelector('.dynamic input[name="title"]')
-    headLineForm = document.querySelector('.dynamic input[name="headline"]')
-    embedForm = document.querySelector('.dynamic input[name="embed"]')
+    let titleForm = document.querySelector('.dynamic input[name="title"]')
+    let headLineForm = document.querySelector('.dynamic input[name="headline"]')
+    let embedForm = document.querySelector('.dynamic input[name="embed"]')
 
 
-    codEmbed = `
+    let codEmbed = `
 <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm.value}</h2>
 <h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm.value}</h3>
 ${embedForm.value}`
@@ -160,11 +159,11 @@ btnSaveStatic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'type': 'static',
                 'data_hora': data_hora,
+                'type': 'static',
                 'titleForm': titleForm.value,
-                'headLineForm': headLineForm.value,
                 'embedForm': '',
+                'headLineForm': headLineForm.value,
                 'altForm': altForm.value,
                 'urlDesktopForm': urlDesktopForm.value,
                 'urlMobileForm': urlMobileForm.value,
@@ -176,7 +175,6 @@ btnSaveStatic.addEventListener("click", e => {
   .then((response) => response.json())
   .then((data) => console.log(data));
   
-  atualizarLista = "sim"
 
 });
 
@@ -195,11 +193,11 @@ btnSaveDynamic.addEventListener("click", e => {
         data: [
             {
                 'id': "INCREMENT",
-                'type': 'dynamic',
                 'data_hora': data_hora,
+                'type': 'dynamic',
                 'titleForm': titleForm.value,
+                'embedForm': '',
                 'headLineForm': '',
-                'embedForm': embedForm.value,
                 'altForm': '',
                 'urlDesktopForm': '',
                 'urlMobileForm': '',
@@ -211,7 +209,6 @@ btnSaveDynamic.addEventListener("click", e => {
   .then((response) => response.json())
   .then((data) => console.log(data));
   
-  atualizarLista = "sim"
 
 });
 
@@ -221,7 +218,7 @@ let dataListSaveApi = ''
 function getListGraphicsApi() {
 
   // removendo todos os filhos (child) da classe 
-  document.getElementById("list-save").innerHTML = ''
+  btnListSave.innerHTML = ''
 
 
   fetch('https://sheetdb.io/api/v1/m8e9lg13iu4fi?sort_by=id&sort_order=desc')
@@ -302,7 +299,7 @@ function teste() {
   console.log("teste")
 }
 
-// getListGraphicsApi()
+getListGraphicsApi()
 
 
 function time() {
@@ -343,22 +340,17 @@ btnNewGraphic.addEventListener("click", e => {
 btnListSave.addEventListener("click", e => {
 
   // chamando funcao para requisitar os dados do google sheets
-  if (atualizarLista == "sim") {
-    getListGraphicsApi()
-    atualizarLista = "nao"
-  }
+  getListGraphicsApi()
 
   btnListSave.style.background = "#8E0AB0"
   btnNewGraphic.style.background = "#C5AFCC"
 
   sectionList.style.display = "flex"
   sectionForm.style.display = "none"
-
-  document.getElementById("list-save").innerHTML
 })
 
 
-let atualizarLista = "sim"
+
 
 
 // generate()
