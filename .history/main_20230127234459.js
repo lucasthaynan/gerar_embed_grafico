@@ -175,10 +175,8 @@ btnSaveStatic.addEventListener("click", e => {
   })
   .then((response) => response.json())
   .then((data) => {
-    
-    // chamando funcao da bilioteca sweetalert.js para exibir o popup
-    swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
-
+    // you can put any JS code here
+    alert('Salvo com sucesso!')
   });
   
   atualizarLista = "sim"
@@ -215,9 +213,8 @@ btnSaveDynamic.addEventListener("click", e => {
   })
   .then((response) => response.json())
   .then((data) => {
-
-       // chamando funcao da bilioteca sweetalert.js para exibir o popup
-       swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
+        // you can put any JS code here
+        alert('Salvo com sucesso!')
       });
   
   atualizarLista = "sim"

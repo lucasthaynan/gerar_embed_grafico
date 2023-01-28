@@ -174,12 +174,7 @@ btnSaveStatic.addEventListener("click", e => {
     })
   })
   .then((response) => response.json())
-  .then((data) => {
-    
-    // chamando funcao da bilioteca sweetalert.js para exibir o popup
-    swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
-
-  });
+  .then((data) => console.log(data));
   
   atualizarLista = "sim"
 
@@ -214,11 +209,7 @@ btnSaveDynamic.addEventListener("click", e => {
     })
   })
   .then((response) => response.json())
-  .then((data) => {
-
-       // chamando funcao da bilioteca sweetalert.js para exibir o popup
-       swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
-      });
+  .then((data) => console.log(data));
   
   atualizarLista = "sim"
 
@@ -226,7 +217,6 @@ btnSaveDynamic.addEventListener("click", e => {
 
 // variável que salva todos os gráficos vindos do Google Sheets
 let dataListSaveApi = ''
-let dataGraphicClick = ''
 
 function getListGraphicsApi() {
 
@@ -300,30 +290,21 @@ function getListGraphicsApi() {
 
           dataListSaveApi.forEach(registroApi => {
 
-          if (idSeletionGraphicApi == registroApi["id"]) {
-            dataGraphicClick = registroApi
-            console.log(registroApi)
-            console.log("igual")
-
-            // chamando funcao para carregar os dados no preview
-            if (registroApi["type"] == "static") {
-              generateStaticPreview(registroApi)
+            if (idSeletionGraphicApi = registroApi["id"]) {
+              console.log(registroApi["id"])
+              console.log("igual")
             } else {
-              generateDynamicPreview(registroApi)
+              console.log(registroApi["id"])
+              console.log("nao é igual")
             }
-            
 
             
-        
-          } 
-      })
+          })
 
         }
         
         )
-      });
-
-
+      })
 
     })
   });
@@ -399,83 +380,6 @@ let atualizarLista = "sim"
 
 
 
-function generateStaticPreview(data) {
-
-  titleForm = data["titleForm"]
-  headLineForm = data["headLineForm"]
-  altForm = data["altForm"]
-  urlDesktopForm = data["urlDesktopForm"]
-  urlMobileForm = data["urlMobileForm"]
- 
-
-  codEmbed = `
-<h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm}</h2>
-<h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm}</h3>
-<picture class="graphic">
- <source media="(min-width: 480px)" srcset="${urlDesktopForm}" />
- <source media="(max-width: 479px)" srcset="${urlMobileForm}" />
- <img src="${urlDesktopForm}" alt="${altForm}" />
-</picture>`
-
-   let codEmbedDesktop = `
-     <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm}</h2>
-     <h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm}</h3>
-     <img src="${urlDesktopForm}" alt="${altForm}" />`
-
-   let codEmbedMobile = `
-     <h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm}</h2>
-     <h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm}</h3>
-     <img src="${urlMobileForm}" alt="${altForm}" />`
-   
-
-   graphicCodDesktop.innerHTML = codEmbedDesktop
-   graphicCodMobile.innerHTML = codEmbedMobile
-   // console.log(graphicCod.innerHTML)
-
-   document.querySelector('.box-embed').value = codEmbed
-
-    //  carregando dados para os inputs do formulario
-
-    document.querySelector('input[name="title"]').value = data["titleForm"]
-    document.querySelector('input[name="headline"]').value = data["headLineForm"]
-    document.querySelector('input[name="alt"]').value = data["altForm"]
-    document.querySelector('input[name="url-desktop"]').value = data["urlDesktopForm"]
-    document.querySelector('input[name="url-mobile"]').value = data["urlMobileForm"]
-
-   
-}
 
 
-
-function generateDynamicPreview(data) {
-
-  titleForm = data["titleForm"]
-  headLineForm = data["headLineForm"]
-  embedForm = data["embedForm"]
-
-
-  codEmbed = `
-<h2 style="font-size:22px; color: #333; margin-bottom: -20px;">${titleForm}</h2>
-<h3 style="font-size:14px; color: #777; font-weight: 350;">${headLineForm}</h3>
-${embedForm}`
-
-  let codEmbedDesktop = codEmbed
-
-  let codEmbedMobile = codEmbed
-  
-
-  graphicCodDesktop.innerHTML = codEmbedDesktop
-  graphicCodMobile.innerHTML = codEmbedMobile
-  // console.log(graphicCod.innerHTML)
-
-  document.querySelector('.dynamic .box-embed').value = codEmbed
-
-  //  carregando dados para os inputs do formulario
-
-  document.querySelector('input[name="title"]').value = data["titleForm"]
-  document.querySelector('input[name="headline"]').value = data["headLineForm"]
-  document.querySelector('input[name="embed"]').value = data["embedForm"]
-
-
-  
-}
+// idSeletionGraphicApi

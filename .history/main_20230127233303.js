@@ -174,12 +174,7 @@ btnSaveStatic.addEventListener("click", e => {
     })
   })
   .then((response) => response.json())
-  .then((data) => {
-    
-    // chamando funcao da bilioteca sweetalert.js para exibir o popup
-    swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
-
-  });
+  .then((data) => console.log(data));
   
   atualizarLista = "sim"
 
@@ -214,11 +209,7 @@ btnSaveDynamic.addEventListener("click", e => {
     })
   })
   .then((response) => response.json())
-  .then((data) => {
-
-       // chamando funcao da bilioteca sweetalert.js para exibir o popup
-       swal("Gráfico salvo!", "Agora copie o embed gerado.", "success");
-      });
+  .then((data) => console.log(data));
   
   atualizarLista = "sim"
 
@@ -434,13 +425,13 @@ function generateStaticPreview(data) {
 
    document.querySelector('.box-embed').value = codEmbed
 
-    //  carregando dados para os inputs do formulario
+  //  carregando dados para os inputs do formulario
 
-    document.querySelector('input[name="title"]').value = data["titleForm"]
-    document.querySelector('input[name="headline"]').value = data["headLineForm"]
-    document.querySelector('input[name="alt"]').value = data["altForm"]
-    document.querySelector('input[name="url-desktop"]').value = data["urlDesktopForm"]
-    document.querySelector('input[name="url-mobile"]').value = data["urlMobileForm"]
+  // document.querySelector('input[name="title"]').value = data["titleForm"]
+  // document.querySelector('input[name="headline"]').value = data["headLineForm"]
+  // document.querySelector('input[name="alt"]').value = data["altForm"]
+  // document.querySelector('input[name="url-desktop"]').value = data["urlDesktopForm"]
+  // document.querySelector('input[name="url-mobile"]').value = data["urlMobileForm"]
 
    
 }
@@ -469,13 +460,6 @@ ${embedForm}`
   // console.log(graphicCod.innerHTML)
 
   document.querySelector('.dynamic .box-embed').value = codEmbed
-
-  //  carregando dados para os inputs do formulario
-
-  document.querySelector('input[name="title"]').value = data["titleForm"]
-  document.querySelector('input[name="headline"]').value = data["headLineForm"]
-  document.querySelector('input[name="embed"]').value = data["embedForm"]
-
 
   
 }
