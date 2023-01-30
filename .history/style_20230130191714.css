@@ -369,8 +369,6 @@ textarea.box-embed {
     gap: 15px;
 }
 
-.btn-new-static,
-.btn-new-dynamic {
+.btn-new {
     display: none;
-    background-color: #61B072;
 }

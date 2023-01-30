@@ -547,32 +547,4 @@ ${embedForm}`
 
 function resetInputs() {
 
-  document.querySelector('.static input[name="title"]').value = ''
-  document.querySelector('.static input[name="headline"]').value = ''
-  document.querySelector('.static input[name="alt"]').value = ''
-  document.querySelector('.static input[name="url-desktop"]').value = ''
-  document.querySelector('.static input[name="url-mobile"]').value = ''
-  document.querySelector('.static .box-embed').value = ''
-
-  document.querySelector('.dynamic input[name="title"]').value = ''
-  document.querySelector('.dynamic input[name="headline"]').value = ''
-  document.querySelector('.dynamic input[name="embed"]').value = ''
-  document.querySelector('.dynamic .box-embed').value = ''
-
-
-  graphicCodDesktop.innerHTML = ''
-  graphicCodMobile.innerHTML = ''
-  
 }
-
-
-document.querySelector('.btn-new-static').addEventListener('click', e => {
-  resetInputs()
-  document.querySelector('.btn-new-static').style.display = "none"
-})
-
-
-document.querySelector('.btn-new-dynamic').addEventListener('click', e => {
-  resetInputs()
-  document.querySelector('.btn-new-dynamic').style.display = "none"
-})

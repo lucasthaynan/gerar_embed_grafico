@@ -487,11 +487,11 @@ function generateStaticPreview(data) {
 
   //  carregando dados para os inputs do formulario
 
-  document.querySelector('.static input[name="title"]').value = data["titleForm"]
-  document.querySelector('.static input[name="headline"]').value = data["headLineForm"]
-  document.querySelector('.static input[name="alt"]').value = data["altForm"]
-  document.querySelector('.static input[name="url-desktop"]').value = data["urlDesktopForm"]
-  document.querySelector('.static input[name="url-mobile"]').value = data["urlMobileForm"]
+  document.querySelector('.input[name="title"]').value = data["titleForm"]
+  document.querySelector('input[name="headline"]').value = data["headLineForm"]
+  document.querySelector('input[name="alt"]').value = data["altForm"]
+  document.querySelector('input[name="url-desktop"]').value = data["urlDesktopForm"]
+  document.querySelector('input[name="url-mobile"]').value = data["urlMobileForm"]
 
   // mudando cor do botão e inserindo texto "atualizar"
   document.querySelector('.save-static').innerText = "Atualizar"
@@ -547,32 +547,4 @@ ${embedForm}`
 
 function resetInputs() {
 
-  document.querySelector('.static input[name="title"]').value = ''
-  document.querySelector('.static input[name="headline"]').value = ''
-  document.querySelector('.static input[name="alt"]').value = ''
-  document.querySelector('.static input[name="url-desktop"]').value = ''
-  document.querySelector('.static input[name="url-mobile"]').value = ''
-  document.querySelector('.static .box-embed').value = ''
-
-  document.querySelector('.dynamic input[name="title"]').value = ''
-  document.querySelector('.dynamic input[name="headline"]').value = ''
-  document.querySelector('.dynamic input[name="embed"]').value = ''
-  document.querySelector('.dynamic .box-embed').value = ''
-
-
-  graphicCodDesktop.innerHTML = ''
-  graphicCodMobile.innerHTML = ''
-  
 }
-
-
-document.querySelector('.btn-new-static').addEventListener('click', e => {
-  resetInputs()
-  document.querySelector('.btn-new-static').style.display = "none"
-})
-
-
-document.querySelector('.btn-new-dynamic').addEventListener('click', e => {
-  resetInputs()
-  document.querySelector('.btn-new-dynamic').style.display = "none"
-})

@@ -368,9 +368,3 @@ textarea.box-embed {
     align-items: flex-end;
     gap: 15px;
 }
-
-.btn-new-static,
-.btn-new-dynamic {
-    display: none;
-    background-color: #61B072;
-}

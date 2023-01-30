@@ -61,39 +61,6 @@ btnDynamic.addEventListener("click", e => {
 })
 
 
-// desabilitando botão de salvar caso o usuário nao tenha clicado em "gerar código"
-// let clicouEmGerarCodigo = false
-// document.querySelectorAll('button.btn-save').forEach(btn => {
-//   btn.disabled = true;
-// })
-
-// // botao de gerar codigo embed no formulario
-// document.querySelectorAll('button.generate').forEach(btn => {
-//   btn.addEventListener('click', e => {
-//     clicouEmGerarCodigo = true
-//   })
-// })
-
-// function checarSeClicouEmGerarCodigo() {
-//   if (clicouEmGerarCodigo == false) {
-//     swal("Ops!", "Você precisa clicar em Gerar Código primeiro", "error");
-//   }
-// }
-
-
-// function checarSeClicouEmGerarCodigo() {
-//   if (clicouEmGerarCodigo == false) {
-//     document.querySelectorAll('button.btn-save').forEach(btn => {
-//       btn.disabled = true;
-//       swal("Ops!", "Você precisa clicar em Gerar Código primeiro", "error");
-//     })
-//   } else {
-    
-//   }
-  
-// }
-
-
 let titleForm = ''
 let headLineForm = ''
 let altForm = ''
@@ -166,13 +133,6 @@ function generateStatic() {
 
     document.querySelector('.box-embed').value = codEmbed
 
-
-    // // habilitando botão de salvar caso o usuário nao tenha clicado em "gerar código"
-    // document.querySelectorAll('button.btn-save').forEach(btn => {
-    //   btn.disabled = false;
-    //   btn.style.background = "#BDBCC3";
-    // })
-
     
 }
 
@@ -188,16 +148,15 @@ btnSaveStatic.addEventListener("click", e => {
 
   // verificando se o grafico selecionando já está salvo no banco de dados (google sheets)
   if (!idSeletionGraphicApi) {
-    // caso não esteja salvo, ele cria um novo registro
     methodAPI = "POST"
     idGraphic = "INCREMENT" 
     urlFetchAPI = "https://sheetdb.io/api/v1/m8e9lg13iu4fi"
 
   } else {
-    // e se tiver salvo, ele apenas atualiza
+
     methodAPI = "PATCH"
     idGraphic = idSeletionGraphicApi
-    urlFetchAPI = "https://sheetdb.io/api/v1/m8e9lg13iu4fi/id/" + idSeletionGraphicApi
+    urlFetchAPI = `https://sheetdb.io/api/v1/m8e9lg13iu4fi/id/${idSeletionGraphicApi}`
   }
 
   fetch(urlFetchAPI, {
@@ -389,6 +348,10 @@ function getListGraphicsApi() {
 let idSeletionGraphicApi = ''
 
 
+function teste() {
+  console.log("teste")
+}
+
 // getListGraphicsApi()
 
 
@@ -487,19 +450,15 @@ function generateStaticPreview(data) {
 
   //  carregando dados para os inputs do formulario
 
-  document.querySelector('.static input[name="title"]').value = data["titleForm"]
-  document.querySelector('.static input[name="headline"]').value = data["headLineForm"]
-  document.querySelector('.static input[name="alt"]').value = data["altForm"]
-  document.querySelector('.static input[name="url-desktop"]').value = data["urlDesktopForm"]
-  document.querySelector('.static input[name="url-mobile"]').value = data["urlMobileForm"]
+  document.querySelector('input[name="title"]').value = data["titleForm"]
+  document.querySelector('input[name="headline"]').value = data["headLineForm"]
+  document.querySelector('input[name="alt"]').value = data["altForm"]
+  document.querySelector('input[name="url-desktop"]').value = data["urlDesktopForm"]
+  document.querySelector('input[name="url-mobile"]').value = data["urlMobileForm"]
 
   // mudando cor do botão e inserindo texto "atualizar"
   document.querySelector('.save-static').innerText = "Atualizar"
   document.querySelector('.save-static').style.background = "#68a5f2"
-
-  // aparecer botão de criar novo grafico
-  document.querySelector('.btn-new-static').style.display = "block"
-  console.log("ola")
    
 }
 
@@ -530,49 +489,13 @@ ${embedForm}`
 
   //  carregando dados para os inputs do formulario
 
-  document.querySelector('.dynamic input[name="title"]').value = data["titleForm"]
-  document.querySelector('.dynamic input[name="headline"]').value = data["headLineForm"]
-  document.querySelector('.dynamic input[name="embed"]').value = data["embedForm"]
+  document.querySelector('input[name="title"]').value = data["titleForm"]
+  document.querySelector('input[name="headline"]').value = data["headLineForm"]
+  document.querySelector('input[name="embed"]').value = data["embedForm"]
 
   // mudando cor do botão e inserindo texto "atualizar"
   document.querySelector('.save-dynamic').innerText = "Atualizar"
   document.querySelector('.save-dynamic').style.background = "#68a5f2"
 
-  // aparecer botão de criar novo grafico
-  document.querySelector('.btn-new-dynamic').style.display = "block"
-
   
 }
-
-
-function resetInputs() {
-
-  document.querySelector('.static input[name="title"]').value = ''
-  document.querySelector('.static input[name="headline"]').value = ''
-  document.querySelector('.static input[name="alt"]').value = ''
-  document.querySelector('.static input[name="url-desktop"]').value = ''
-  document.querySelector('.static input[name="url-mobile"]').value = ''
-  document.querySelector('.static .box-embed').value = ''
-
-  document.querySelector('.dynamic input[name="title"]').value = ''
-  document.querySelector('.dynamic input[name="headline"]').value = ''
-  document.querySelector('.dynamic input[name="embed"]').value = ''
-  document.querySelector('.dynamic .box-embed').value = ''
-
-
-  graphicCodDesktop.innerHTML = ''
-  graphicCodMobile.innerHTML = ''
-  
-}
-
-
-document.querySelector('.btn-new-static').addEventListener('click', e => {
-  resetInputs()
-  document.querySelector('.btn-new-static').style.display = "none"
-})
-
-
-document.querySelector('.btn-new-dynamic').addEventListener('click', e => {
-  resetInputs()
-  document.querySelector('.btn-new-dynamic').style.display = "none"
-})

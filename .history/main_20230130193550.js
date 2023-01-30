@@ -570,9 +570,3 @@ document.querySelector('.btn-new-static').addEventListener('click', e => {
   resetInputs()
   document.querySelector('.btn-new-static').style.display = "none"
 })
-
-
-document.querySelector('.btn-new-dynamic').addEventListener('click', e => {
-  resetInputs()
-  document.querySelector('.btn-new-dynamic').style.display = "none"
-})
